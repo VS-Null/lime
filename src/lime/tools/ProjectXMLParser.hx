@@ -134,11 +134,6 @@ class ProjectXMLParser extends HXProject
 				defines.set("cpp", "1");
 				defines.set("mingw", "1");
 			}
-			else
-			{
-				defines.set("targetType", "neko");
-				defines.set("neko", "1");
-			}
 		}
 		else if (target == Platform.WEB_ASSEMBLY)
 		{
