@@ -771,6 +771,19 @@ class HXProject extends Script
 				defines.set("cpp", "1");
 				defines.set("mingw", "1");
 			}
+			else
+			{
+				/*
+				targetFlags.set("neko", "1");
+
+				defines.set("targetType", "neko");
+				defines.set("neko", "1");
+				*/
+				if (defines.get("exportOnly") != null)
+					return;
+
+				Log.error("Cannot build target 'ios' on platform 'windows' without a valid toolchain. Use -DexportOnly to generate XML/types.");
+			}
 		}
 		else if (target == Platform.WEB_ASSEMBLY)
 		{
